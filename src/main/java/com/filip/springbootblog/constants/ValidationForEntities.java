@@ -1,4 +1,4 @@
-package com.filip.springbootblog.jpa.constants;
+package com.filip.springbootblog.constants;
 
 public class ValidationForEntities {
 

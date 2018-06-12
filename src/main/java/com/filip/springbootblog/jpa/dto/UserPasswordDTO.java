@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.Length;
 
 import java.io.Serializable;
 
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MIN_LENGTH_PASSWORD;
+import static com.filip.springbootblog.constants.ValidationForEntities.MIN_LENGTH_PASSWORD;
 
 @Getter
 @Setter

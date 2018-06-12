@@ -22,7 +22,7 @@ public interface IUserService {
     Optional<User> getUserByEmail(String email);
 
     @Transactional(readOnly = true)
-    User getByUserKey(String userKey);
+    Optional<User> getByUserKey(String userKey);
 
     Collection<User> getAllUsers();
 

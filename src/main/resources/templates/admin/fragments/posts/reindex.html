@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div th:fragment="body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Repopulate Solr Index
+                        <small>Delete and re-enter all published Posts and Links</small>
+                    </h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content  fill-body">
+                    <div class="fill-body-message">
+                        <form action="/admin/posts/solr/reindex" th:action="@{/admin/posts/solr/reindex}" method="get" class="form-horizontal"
+                              id="post-search-form">
+                            <table class="table table-striped">
+                                <!--/*@thymesVar id="appSettings" type="com.nixmash.blog.jpa.common.ApplicationSettings"*/-->
+                                <tr th:unless="${appSettings.solrEnabled}">
+                                    <td colspan="2" class="solr-message">Solr is not enabled. Please confirm your Solr Server is running and that the <span>blog.solrEnabled</span> property in your external <span>blog.properties</span> file is set to "true."</td>
+                                </tr>
+                                <tr th:if="${appSettings.solrEnabled}">
+                                    <td class="col-sm-5">
+                                            <label class="control-label">Click Button to Reindex Posts</label>
+                                    </td>
+                                    <td class="col-sm-1 reindex-button">
+                                        <div class="controls">
+                                            <input type="submit" class="btn btn-primary btn-lg" name="reindex"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr th:if="${hasPostDocCount}">
+                                    <td colspan="2" class="reindex-msg-td"><div class="reindex-msg" th:text="${reindexMessage}"></div></td>
+                                </tr>
+                                </table>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

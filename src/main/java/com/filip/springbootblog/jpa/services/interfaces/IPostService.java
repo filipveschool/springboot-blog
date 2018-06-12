@@ -5,6 +5,7 @@ import com.filip.springbootblog.jpa.dto.CategoryDTO;
 import com.filip.springbootblog.jpa.dto.PostDTO;
 import com.filip.springbootblog.jpa.dto.TagDTO;
 import com.filip.springbootblog.jpa.enums.PostType;
+import com.filip.springbootblog.jpa.exceptions.TagNotFoundException;
 import com.filip.springbootblog.jpa.models.Category;
 import com.filip.springbootblog.jpa.models.Post;
 import com.filip.springbootblog.jpa.models.PostImage;
@@ -141,7 +142,7 @@ public interface IPostService {
     @Transactional(readOnly = true)
     Category getCategoryById(long categoryId);
 
-    Tag getTag(String tagValue);
+    Tag getTag(String tagValue) throws TagNotFoundException;
 
     Page<Post> getPublishedPostsByTagId(long tagId, int pageNumber, int pageSize);
 

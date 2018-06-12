@@ -5,7 +5,7 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_PROPERTYNAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_PROPERTYNAME;
 
 @Getter
 @Setter

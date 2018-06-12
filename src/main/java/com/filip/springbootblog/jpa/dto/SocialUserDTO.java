@@ -11,13 +11,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.Basic;
 import java.util.Collection;
 
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_EMAIL_ADDRESS;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_FIRST_NAME;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_LAST_NAME;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_USERNAME;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MIN_LENGTH_FIRST_NAME;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MIN_LENGTH_LAST_NAME;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MIN_LENGTH_USERNAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_EMAIL_ADDRESS;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_FIRST_NAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_LAST_NAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_USERNAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MIN_LENGTH_FIRST_NAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MIN_LENGTH_LAST_NAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MIN_LENGTH_USERNAME;
 
 @Getter
 @Setter

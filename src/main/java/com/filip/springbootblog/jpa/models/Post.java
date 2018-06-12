@@ -35,8 +35,8 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Set;
 
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_POST_NAME_LENGTH;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_POST_TITLE_LENGTH;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_POST_NAME_LENGTH;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_POST_TITLE_LENGTH;
 import static javax.persistence.AccessType.FIELD;
 import static javax.persistence.GenerationType.IDENTITY;
 

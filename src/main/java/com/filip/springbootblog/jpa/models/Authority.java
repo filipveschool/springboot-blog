@@ -13,8 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_AUTHORITY;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MIN_LENGTH_AUTHORITY;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_AUTHORITY;
+import static com.filip.springbootblog.constants.ValidationForEntities.MIN_LENGTH_AUTHORITY;
 
 @Getter
 @Setter

@@ -30,12 +30,12 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_EMAIL_ADDRESS;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_FIRST_NAME;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_LAST_NAME;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_LENGTH_USERNAME;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MIN_LENGTH_PASSWORD;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MIN_LENGTH_USERNAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_EMAIL_ADDRESS;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_FIRST_NAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_LAST_NAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_LENGTH_USERNAME;
+import static com.filip.springbootblog.constants.ValidationForEntities.MIN_LENGTH_PASSWORD;
+import static com.filip.springbootblog.constants.ValidationForEntities.MIN_LENGTH_USERNAME;
 
 @Slf4j
 @Getter

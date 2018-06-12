@@ -9,7 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.annotation.Resource;
 import java.util.Locale;
 
-import static com.filip.springbootblog.jpa.constants.FeedbackMessages.FLASH_MESSAGE_KEY_FEEDBACK;
+import static com.filip.springbootblog.constants.FeedbackMessages.FLASH_MESSAGE_KEY_FEEDBACK;
 
 @Slf4j
 @Component

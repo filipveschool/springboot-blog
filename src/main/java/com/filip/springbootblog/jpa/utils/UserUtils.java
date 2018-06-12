@@ -1,10 +1,14 @@
 package com.filip.springbootblog.jpa.utils;
 
 
+import com.filip.springbootblog.jpa.dto.UserDTO;
+import com.filip.springbootblog.jpa.models.Authority;
 import com.filip.springbootblog.jpa.models.User;
+import com.filip.springbootblog.jpa.models.UserData;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 
 public class UserUtils {
@@ -19,8 +23,8 @@ public class UserUtils {
         userDTO.setRepeatedPassword(user.getPassword());
         userDTO.setEmail(user.getEmail());
         userDTO.setSignInProvider(user.getSignInProvider());
-        userDTO.setAuthorities(user.getAuthorities());
-        userDTO.setHasAvatar(user.hasAvatar());
+        userDTO.setAuthorities((Collection<Authority>) user.getAuthorities());
+        userDTO.setHasAvatar(user.isHasAvatar());
         userDTO.setUserKey(user.getUserKey());
         return userDTO;
     }

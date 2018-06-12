@@ -1,4 +1,4 @@
-package com.filip.springbootblog.jpa.constants;
+package com.filip.springbootblog.constants;
 
 public class FeedbackMessages {
 
@@ -8,5 +8,6 @@ public class FeedbackMessages {
     public static final String FEEDBACK_MESSAGE_PASSWORD_ERROR = "feedback.user.password.error";
     public static final String FEEDBACK_PASSWORD_LOGIN = "feedback.user.password.login";
     public static final String FEEDBACK_PASSWORD_EMAIL_SENT = "feedback.user.password.email.sent";
+    public static final String MESSAGE_KEY_SOCIAL_SIGNUP = "signup.page.subheader";
 
 }

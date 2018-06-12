@@ -1,6 +1,6 @@
 package com.filip.springbootblog.mvc.controllers;
 
-import com.filip.springbootblog.jpa.constants.FeedbackMessages;
+import com.filip.springbootblog.constants.FeedbackMessages;
 import com.filip.springbootblog.jpa.dto.ForgotEmailDTO;
 import com.filip.springbootblog.jpa.dto.UserPasswordDTO;
 import com.filip.springbootblog.jpa.enums.ResetPasswordResult;
@@ -10,6 +10,7 @@ import com.filip.springbootblog.jpa.models.UserToken;
 import com.filip.springbootblog.jpa.models.validators.UserPasswordValidator;
 import com.filip.springbootblog.jpa.services.interfaces.IUserService;
 import com.filip.springbootblog.jpa.utils.SharedUtils;
+import com.filip.springbootblog.mail.service.interfaces.FmMailService;
 import com.filip.springbootblog.mvc.components.MessageComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ import javax.validation.Valid;
 import java.util.Optional;
 import java.util.UUID;
 
-import static com.filip.springbootblog.jpa.constants.PageViews.USER_CHANGEPASSWORD_VIEW;
-import static com.filip.springbootblog.jpa.constants.PageViews.USER_FORGOTPASSWORD_VIEW;
+import static com.filip.springbootblog.constants.PageViews.USER_CHANGEPASSWORD_VIEW;
+import static com.filip.springbootblog.constants.PageViews.USER_FORGOTPASSWORD_VIEW;
 
 @Slf4j
 @Controller
@@ -42,6 +43,9 @@ public class UserPasswordController {
 
     @Autowired
     private MessageComponent messageComponent;
+
+    @Autowired
+    private FmMailService fmMailService;
 
     @PostMapping(value = "/users/forgotpassword")
     public String sendForgotEmail(@Valid ForgotEmailDTO forgotEmailDTO,

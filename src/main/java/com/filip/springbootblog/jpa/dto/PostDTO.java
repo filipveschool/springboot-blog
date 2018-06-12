@@ -20,8 +20,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MAX_POST_TITLE_LENGTH;
-import static com.filip.springbootblog.jpa.constants.ValidationForEntities.MIN_POST_CONTENT_LENGTH;
+import static com.filip.springbootblog.constants.ValidationForEntities.MAX_POST_TITLE_LENGTH;
+import static com.filip.springbootblog.constants.ValidationForEntities.MIN_POST_CONTENT_LENGTH;
 import static org.apache.commons.lang3.StringUtils.substring;
 
 @Getter

@@ -68,9 +68,9 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User getByUserKey(String userKey) {
+    public Optional<User> getByUserKey(String userKey) {
         log.debug("Getting user by userkey={}", userKey);
-        return userRepository.findByUserKey(userKey).orElseThrow(() -> new IllegalArgumentException("User not found by userKey"));
+        return userRepository.findByUserKey(userKey);
     }
 
     @Override

@@ -41,8 +41,7 @@ public interface PostRepository extends PagingAndSortingRepository<Post, Long> {
 
     Page<Post> findByIsPublishedTrue(Pageable pageable);
 
-    @Query(value = "SELECT " +
-            "GROUP_CONCAT(distinct(upper(substr(post_title,1,1))) SEPARATOR '')" +
+    @Query(value = "SELECT GROUP_CONCAT(distinct(upper(substr(post_title,1,1))) SEPARATOR '')" +
             " FROM posts WHERE is_published = true", nativeQuery = true)
     String getAlphaLinkString();
 
@@ -55,5 +54,13 @@ public interface PostRepository extends PagingAndSortingRepository<Post, Long> {
     @Query("select distinct p from Post p left join p.tags t where p.isPublished = true and p.postType = ?1")
     Page<Post> findPublishedByPostTypePaged(PostType postType, Pageable pageable);
 
+    //    @NamedQueries({
+//            @NamedQuery(name = "Post.getByPostIds",
+//                    query = "SELECT p FROM Post p " +
+//                            "WHERE p.postId IN :postIds ORDER BY p.postDate DESC"),
+//    })
+
+    @Query("select p from Post p where p.postId IN ?1 order by p.postDate desc")
+    List<Post> findByPostIds(List<Long> postIds);
 
 }

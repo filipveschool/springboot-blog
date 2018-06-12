@@ -1,6 +1,8 @@
 package com.filip.springbootblog.jpa.models;
 
 
+import com.filip.springbootblog.jpa.common.ApplicationSettings;
+
 import java.util.Collection;
 
 public class CurrentUser
@@ -8,7 +10,7 @@ public class CurrentUser
 
     private static final long serialVersionUID = 7828419298616811182L;
 
-    private ApplicationSettings applicationSettings = getAppSettingsFromContext();
+    private ApplicationSettings applicationSettings = new ApplicationSettings();
     private User user;
 
     public CurrentUser(User user) {
@@ -32,7 +34,7 @@ public class CurrentUser
     public String getProfileIconUrl() {
 
         String iconUrl = "/images/user32x32.png";
-        if (this.user.hasAvatar()) {
+        if (this.user.isHasAvatar()) {
             iconUrl = applicationSettings.getProfileIconUrlRoot() + user.getUserKey();
         }
         return iconUrl;
@@ -53,7 +55,7 @@ public class CurrentUser
     }
 
     private boolean hasRole(String role) {
-        Collection<Authority> authorities = this.getUser().getAuthorities();
+        Collection<Authority> authorities = (Collection<Authority>) this.getUser().getAuthorities();
         boolean hasAuthority = false;
         for (Authority authority : authorities) {
             if (authority.getAuthority().toUpperCase().contains(role))
@@ -67,7 +69,7 @@ public class CurrentUser
     public String getProfileImageUrl() {
 
         String iconUrl = "/images/user.png";
-        if (this.user.hasAvatar()) {
+        if (this.user.isHasAvatar()) {
             iconUrl = applicationSettings.getProfileImageUrlRoot() + user.getUserKey();
         }
         return iconUrl;
