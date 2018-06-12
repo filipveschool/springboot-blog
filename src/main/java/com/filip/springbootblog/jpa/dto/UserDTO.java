@@ -61,6 +61,20 @@ public class UserDTO {
 
     }
 
+    public boolean isNew() {
+        return (this.userId == null);
+    }
+
+
+    public Collection<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Collection<Authority> authorities) {
+        this.authorities = authorities;
+    }
+
+
     @Override
     public String toString() {
         return "UserCreateForm{" +
